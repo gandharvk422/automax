@@ -1,5 +1,5 @@
 from asyncio import create_subprocess_exec
-from imp import reload
+from importlib import reload
 from django.http import JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
@@ -81,7 +81,7 @@ def edit_view(request, id):
                 return redirect('home')
             else:
                 messages.error(request, f'An error occurred while trying to edit the listing.')
-                return reload()
+                return redirect(request.path)
         else:
             listing_form = ListingForm(instance=listing)
             location_form = LocationForm(instance=listing.location)
