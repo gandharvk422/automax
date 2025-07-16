@@ -5,3 +5,4 @@ crispy-bootstrap5
 django-filter
 django-environ
 psycopg2-binary
+resend
