@@ -1,14 +1,15 @@
 {
+  "version": 2,
   "builds": [
     {
-      "src": "src/automax/wsgi.py",
+      "src": "src/api/index.py",
       "use": "@vercel/python"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "src/automax/wsgi.py"
+      "dest": "src/api/index.py"
     }
   ]
 }
